@@ -1,7 +1,7 @@
 # código-TCC
 Código referente ao Trabalho de Conclusão de Curso de Engenharia de Sistemas.
 
-# Base de dados hibrida
+# Base de dados híbrida
 Os sinais elétricos presentes na base de dados possuem volume muito elevado, onde um único parâmetro, como voltage_hf, pode ultrapassar 400 mil amostras por teste. Armazenar esses sinais diretamente em um banco relacional tornaria o sistema pesado, lento e pouco funcional.
 Por isso, adotou-se uma abordagem híbrida: os metadados são armazenados em SQLite, enquanto os sinais permanecem no arquivo HDF5. A ligação entre ambos é feita pelo atributo hdf5_path, que indica a localização exata de cada sinal no HDF5.
 Essa estrutura permite consultas rápidas via SQL e garante que apenas os sinais elétricos necessários sejam carregadas durante a análise, evitando a leitura completa do arquivo e tornando o processo mais eficiente.
